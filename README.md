@@ -26,4 +26,40 @@ last occurrences of a given item in a list of items. The function should return 
 - `setVal` sets the value for a key in the map
 - `getVal` gets the value of a given key in a map
 - `delKey` deletes a key (and its value) from a map
-- `buildMap` which takes a list of items and returns a map containing all of the items in the list and the number of times that each one occurs. For example, given the input `[1,2,3,2,1]`, the function would return the map [(1,2), (2,2), (3,1)].
+- `buildMap` takes a list of items and returns a map containing all of the items in the list and the number of times that each one occurs. For example, given the input `[1,2,3,2,1]`, the function would return the map [(1,2), (2,2), (3,1)].
+
+### Binary Tree
+
+- `hasbt` tests whether the tree t contains a node with label x
+- `equalbt` tests whether trees t1 and t2 are identical; i.e. are both empty, or have the same label at the root and the same subtrees
+- `reflectbt` constructs a mirror image of tree t
+- `fringebt` constructs a list containing the labels on the leaves of the tree t, in the order they would be visited in a left-to-right depth-first traversal
+- `fullbt` checks whether tree t is full i.e. if every node has either 0 or 2 subtrees
+
+### Binary Tree Fold
+
+- `btfold` takes as arguments a function, a "unit" value and a binary tree
+
+If the tree is empty, the fold function should return the unit value.
+If not, it should apply the fold recursively to both subtrees, then apply the given function to the values returned and the value at the root. 
+
+For example, to count the number of nodes in a tree, we would call `btfold` with the function `\u v w -> 1 + v + w` and `unit value 0`; to sum the labels on a tree (assuming they are numerical labels), we would call `btfold` with the function `\u v w -> u + v + w` and `unit value 0`
+
+### Binary Search Tree (BST)
+
+- `empty` returns an empty BST
+- `insert` inserts an item into a BST (no change, if already there)
+- `has` checks whether a given item occurs in a BST
+- `delete` deletes a given item from a BST (no change, if not there)
+- `flatten` returns a list of the items in a BST
+- `equals` determines whether two BSTs contain the same items
+
+### Graph
+
+We represent a weighted undirected graph as a list of edges, where each edge is represented by a triple `(u,c,v)`, where u and v are the vertices at the ends of the edge and c is the weight on that edge.
+
+This assumes that weights are positive integers, and allow a self-loop (an edge with the same start and end vertex) with a weight of zero in order to allow a vertex with no inward or outward edges to be represented
+
+- `reachable` determines whether there is a path from vertex x to vertex y in graph g
+- `minCostPath` finds a minimal cost path from x to y in g
+- `cliques` splits a graph g into a list of subgraphs, such that each graph is a maximal connected component of g (i.e. all of the vertices in the component can be reached from all others, and the components contains all of the vertices that can be reached from any of its vertices; and every edge of g occurs in one of the components of the result)
