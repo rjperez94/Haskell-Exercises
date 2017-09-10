@@ -16,8 +16,8 @@ last occurrences of a given item in a list of items. The function should return 
 ### Sort
 
 2 kinds of sorting in terms of O(n)
-1. implements an n<sup>2</sup> sorting algorithm, e.g. insertion sort, selection sort or bubble sort.
-2. implements an n log n sorting algorithm, e.g. quicksort or merge sort
+1. implements an `n<sup>2</sup>` sorting algorithm, e.g. insertion sort, selection sort or bubble sort.
+2. implements an `n log n` sorting algorithm, e.g. quicksort or merge sort
 
 ### Map
 
